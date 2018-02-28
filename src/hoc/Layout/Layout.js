@@ -1,7 +1,8 @@
 //libraries
 import React, { Component } from 'react';
 //containers
-import Aux from '../Aux/Aux';
+import Auxa from '../Auxa/Auxa';
+import Header from '../../containers/Header/Header';
 //components
 import Home from '../../components/Home/Home'
 
@@ -9,12 +10,12 @@ import Home from '../../components/Home/Home'
 class Layout extends Component {
     render () {
         return (
-            <Aux>
-              {/* <Header /> Trzeba wstawić */}
+            <Auxa>
+              <Header />
               {/* <Navigation />  -> Bedzie w headerze*/}
               <Home />  {/*Tutaj będzie zawartość strony*/}
               {/* <Footer> Trzeba wstawić */}
-            </Aux>
+            </Auxa>
         )
     }
 }
