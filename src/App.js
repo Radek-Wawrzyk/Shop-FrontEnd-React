@@ -1,16 +1,16 @@
 //libraries
 import React, { Component } from 'react';
 //containers
-import Aux from './hoc/Aux/Aux';
+import Auxa from './hoc/Auxa/Auxa';
 import Layout from './hoc/Layout/Layout';
 
 class App extends Component {
   render() {
     return (
-      <Aux>
+      <Auxa>
         <Layout>
         </Layout>
-      </Aux>
+      </Auxa>
     );
   }
 }

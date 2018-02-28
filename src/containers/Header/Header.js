@@ -1,11 +1,13 @@
 //libraries
 import React, {Component} from 'react';
 //styles
-// import classes from './Header.scss';
+import classes from './Header.scss';
 //containers
 import Auxa from '../../hoc/Auxa/Auxa';
+import Auth from '../Auth/Auth';
 //components
 import Logo from '../../components/Logo/Logo';
+import Navigation from '../../components/Navigation/Navigation';
 
 class Header extends Component {
 
@@ -13,19 +15,11 @@ class Header extends Component {
     return (
       <Auxa>
         <Logo />
+        <Auth />
+        <Navigation />
       </Auxa>
     )
   }
 }
 
 export default Header;
-
-
-
-// Logo po lewej
-//
-// Po prawej na górze lupka, Zaloguj, Zarejestruj
-//
-// Po zalogowaniu: po prawej lupka i Witaj "Imię"
-//
-// Pod spodem Navigation
