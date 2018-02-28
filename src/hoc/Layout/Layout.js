@@ -4,14 +4,16 @@ import React, { Component } from 'react';
 import Aux from '../Aux/Aux';
 //components
 import Home from '../../components/Home/Home'
-import Navigation from '../../components/Navigation/Navigation';
+
 
 class Layout extends Component {
     render () {
         return (
             <Aux>
-              <Navigation />
+              {/* <Header /> Trzeba wstawić */}
+              {/* <Navigation />  -> Bedzie w headerze*/}
               <Home />  {/*Tutaj będzie zawartość strony*/}
+              {/* <Footer> Trzeba wstawić */}
             </Aux>
         )
     }
