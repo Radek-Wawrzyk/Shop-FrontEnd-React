@@ -1,20 +1,35 @@
 //libraries
 import React, { Component } from 'react';
 //containers
-import Aux from '../Aux/Aux';
+import Auxa from '../Auxa/Auxa';
+import Header from '../../containers/Header/Header';
 //components
 import Home from '../../components/Home/Home'
-import Navigation from '../../components/Navigation/Navigation';
+
 
 class Layout extends Component {
     render () {
         return (
-            <Aux>
-              <Navigation />
+            <Auxa>
+              <Header />
+              {/* <Navigation />  -> Bedzie w headerze*/}
               <Home />  {/*Tutaj będzie zawartość strony*/}
-            </Aux>
+              {/* <Footer> Trzeba wstawić */}
+            </Auxa>
         )
     }
 }
 
 export default Layout;
+
+// prawdopodobony wygląd struktury
+
+  // <Header>
+  //   <Logo></Logo>
+  //   <Auth> Tu będzie rejestracja lub logowanie oraz wylogowanie</Auth>
+  //   <Navigation> Tu będą linki</Navigation>
+  // </Header>
+  // <Content>
+  //   Tu będą się zmieniać strony
+  // </Content>
+  // <Footer>Tu będzie stopka</Footer>
