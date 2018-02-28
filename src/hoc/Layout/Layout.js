@@ -18,3 +18,15 @@ class Layout extends Component {
 }
 
 export default Layout;
+
+// prawdopodobony wygląd struktury
+
+  // <Header>
+  //   <Logo></Logo>
+  //   <Auth> Tu będzie rejestracja lub logowanie oraz wylogowanie</Auth>
+  //   <Navigation> Tu będą linki</Navigation>
+  // </Header>
+  // <Content>
+  //   Tu będą się zmieniać strony
+  // </Content>
+  // <Footer>Tu będzie stopka</Footer>
