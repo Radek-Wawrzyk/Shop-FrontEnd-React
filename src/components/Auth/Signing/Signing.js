@@ -2,12 +2,12 @@ import React from 'react';
 import classes from './Signing.scss';
 
 const signing = () => (
-<div>
+<div className>
   <p>
     <span>
       Zaloguj się
     </span>
-      lub
+       lub
     <span>
       Zarejestruj
     </span>

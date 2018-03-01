@@ -13,10 +13,14 @@ class Header extends Component {
 
   render () {
     return (
-      <Auxa>
-        <Logo />
-        <Auth />
-        <Navigation />
+      <Auxa >
+        <div className={classes.Header}>
+          <Logo />
+          <div className={classes.Top}>
+            <Auth />
+            <Navigation />
+          </div>
+      </div>
       </Auxa>
     )
   }

@@ -3,7 +3,9 @@ import React from 'react';
 
 const navItem = (props) => (
   <li>
-    {props.children}
+    <a href="#">
+      {props.children}
+    </a>
   </li>
 )
 export default navItem;
