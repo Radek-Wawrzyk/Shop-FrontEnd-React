@@ -4,9 +4,9 @@ import classes from './Search.scss';
 import SearchImg from '../../assets/images/search.png';
 
 const search = () => (
-  <div className={classes.Search}>
+  <button className={classes.Search}>
     <img src={SearchImg} alt="search"/>
-  </div>
+  </button>
 )
 
 export default search

@@ -8,18 +8,18 @@ import NavItem from './NavItem/NavItem';
 const navigation = () => (
   <nav className={classes.Navigation}>
     <ul>
-        <NavItem>
-          Strona główna
-        </NavItem>
-        <NavItem>
-          Oferta
-        </NavItem>
-        <NavItem>
-          O nas
-        </NavItem>
-        <NavItem>
-          Kontakt
-        </NavItem>
+      <NavItem>
+        Strona główna
+      </NavItem>
+      <NavItem>
+        Oferta
+      </NavItem>
+      <NavItem>
+        O nas
+      </NavItem>
+      <NavItem>
+        Kontakt
+      </NavItem>
     </ul>
   </nav>
 )
