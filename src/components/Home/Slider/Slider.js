@@ -1,27 +1,74 @@
 //libraries
-import React from 'react';
+import React, {Component} from 'react';
 import classes from "./Slider.scss";
 
-const slider = (props) => (
-  <section className={classes.slider}>
-    <ul className={classes.slider_list}>
-      <li className={classes.slider_item}>
-        <div className={classes.slider_item_content}>
-          <h1 className={classes.slider_item_title}>Rolex aka "zielone szkiełko"</h1>
-          <p className={classes.slider_item_description}>Zegarek z najwyższej jakości materiałów nie dla biedaków</p>
-          <div className={classes.slider_item_payment}>
-            <button className={classes.button}>Kup teraz</button>
-            <p>10.000 zł</p>
-          </div>
-        </div>
-      </li> 
-    </ul>
-    <ul className={classes.slider_dots}>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-  </section>
-)
+import data from './data';
 
-export default slider;
+import SliderItem from "./SliderItem/SliderItem";
+import SliderDot from "./SliderDot/SliderDot";
+
+let number = null;
+
+class Slider extends Component {
+  state = {
+    'number': 0,
+  }
+
+  componentDidMount() {
+    this.startInterval()
+  }
+
+  startInterval = () => {
+    this.interval = setInterval(() => this.changeSlide(), 3000);
+  }
+
+  slideHandler = (props) => {
+    number = props.target.id
+    this.setState({
+      number: number
+    })
+    clearInterval(this.interval)
+    this.startInterval()
+  }
+
+  checkClass = (props) => {
+    if (props == this.state.number) {
+      return classes.Active
+    }
+    else {
+      return classes.Hide
+    }
+  }
+
+   changeSlide = () => {
+    number ++
+    if (number == 3) {
+      number = 0
+    }
+    this.setState({
+      number: number
+    })
+  }
+
+
+  render() {
+
+    let sliderItem = data.map((data) => <SliderItem key = {data.id} product_name = {data.product_name} price ={data.price} description={data.description} style={{opacity: 0}} isActive={this.checkClass(data.id)}/>)
+
+    return (
+      <section className={classes.Slider}>
+        <ul className={classes.Slider_list} >
+          {sliderItem}
+        </ul>
+        <ul className={classes.Slider_dots}>
+          <SliderDot id="0" clicked={this.slideHandler} isActive={this.checkClass(0)}/>
+          <SliderDot id="1" clicked={this.slideHandler} isActive={this.checkClass(1)}/>
+          <SliderDot id="2" clicked={this.slideHandler} isActive={this.checkClass(2)}/>
+        </ul>
+    </section>
+    )
+  }
+}
+
+
+export default Slider;

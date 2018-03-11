@@ -20,7 +20,7 @@ class Auth extends Component {
   render () {
     return (
       <Auxa>
-        <div className={classes.Container} >
+        <div className={classes.Container}>
           <Search />
           <div onClick={this.changeSignHandler}>
             {!this.state.isSignin ? <Signing /> : <Logout /> }

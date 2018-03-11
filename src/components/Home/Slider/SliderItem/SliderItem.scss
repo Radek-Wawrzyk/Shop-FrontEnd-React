@@ -1,0 +1,50 @@
+//colors
+$grey: #383838;
+
+
+.SliderItem {
+  transition: opacity 1s;
+  opacity: 1;
+  position: absolute;
+  max-width: 500px;
+  h1 {
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #383838;
+    margin: 0 0 20px 0;
+  }
+  .Slider_item_description {
+    position: relative;
+  }
+  .Slider_item_description::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background:#383838;
+  }
+  .Slider_item_description::after {
+    content: "●";
+    position: absolute;
+    left: 99%;
+    bottom: -6px;
+  }
+
+//Item payment
+
+  .Slider_item_payment {
+    display: flex;
+    button {
+      text-transform: uppercase;
+      border: 1px solid $grey;
+      background: none;
+      padding: 15px 50px;
+    }
+    button:hover {
+      cursor: pointer;
+    }
+  }
+}

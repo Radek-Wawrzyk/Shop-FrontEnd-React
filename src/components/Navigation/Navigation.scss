@@ -1,32 +1,30 @@
 .Navigation {
   padding: 20px 0;
-}
-.Navigation ul {
-  display: flex;
-}
-.Navigation ul li:first-of-type {
-  position: relative;
-}
-.Navigation ul li:first-of-type::before {
-  content: "◆";
-  color: #d8b093;
-  font-size: 12px;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.Navigation ul li a {
-  padding: 10px 14px;
-  color: black;
-  text-decoration: none;
-  transition: color 0.25s;
-  display: block;
-  font-size: 19px;
-}
-.Navigation ul li a:hover {
-  color: #d8b093;
-}
-.Navigation ul li a.active {
-  font-weight: bold;
+  margin-right: 130px;
+  ul {
+    display: flex;
+    li:first-of-type {
+    position: relative;
+      &::before {
+        content: "◆";
+        color: #d8b093;
+        font-size: 12px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    li a {
+      color: black;
+      display: block;
+      font-size: 19px;
+      padding: 10px 14px;
+      text-decoration: none;
+      transition: color 0.25s;
+      &:hover {
+        color: #d8b093;
+      }
+    }
+  }
 }

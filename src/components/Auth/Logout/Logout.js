@@ -4,11 +4,9 @@ import React from 'react';
 import classes from './Logout.scss';
 
 const logout = () => (
-<div>
-  <p>Witaj
-    <span>Imię</span>
-    Wyloguj
-  </p>
+<div className={classes.Logout}>
+  <p>Witaj<span>Imię</span></p>
+  <p className={classes.Log}>Wyloguj</p>
 </div>
 )
 
