@@ -1,7 +1,18 @@
 .Header {
-  display: flex;
-  justify-content: space-between;
-  padding-left:100px;
-  // padding-right: 100px;
-  // border: 1px solid green;
+  width: 100%;
+  padding: 0 100px;
+  display: inline-block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background: white;
+}
+
+@media screen and (max-width: 920px) {
+  .Header {
+    padding: 0 30px;
+    height: 60px;
+    border-bottom: 1px solid rgba(56, 56, 56,0.2);
+  }
 }

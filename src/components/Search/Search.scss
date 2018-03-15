@@ -1,18 +1,26 @@
-.Search {
-  background-color: black;
-  width:  60px;
+//colors
+$mainBtnColor: #383838;
+$secondFontColor: #d8b093;
+
+.BtnSearch {
+  border: 1px solid transparent;
+  width: 60px;
   height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 20px 0 0;
-  border: none;
-  outline-color: #e4a579;
-  img {
-    width: 15px;
-    height: 15px;
+  background: $mainBtnColor;
+  padding: 6px 12px;
+  color: white;
+  font-size: 14px;
+  margin: 0 20px;
+  &:focus {
+    outline-color: $secondFontColor;
   }
-}
-.Search:hover {
-  cursor: pointer;
+  &:hover {
+      cursor: pointer;
+  }
+  span {
+    color: white;
+  }
 }

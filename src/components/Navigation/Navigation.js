@@ -4,10 +4,12 @@ import React from 'react';
 import classes from './Navigation.scss';
 //components
 import NavItem from './NavItem/NavItem';
+import Logo from '../../components/Logo/Logo';
 
 const navigation = () => (
   <nav className={classes.Navigation}>
-    <ul>
+    <Logo />
+    <ul className={classes.NavigationMenu}>
       <NavItem>
         Strona główna
       </NavItem>

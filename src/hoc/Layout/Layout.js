@@ -6,14 +6,12 @@ import Header from '../../containers/Header/Header';
 //components
 import Home from '../../components/Home/Home'
 
-
 class Layout extends Component {
     render () {
         return (
             <Auxa>
               <Header />
-              {/* <Navigation />  -> Bedzie w headerze*/}
-              <Home />  {/*Tutaj będzie zawartość strony*/}
+              <Home />  {/*Tutaj będzie zawartość strony
               {/* <Footer> Trzeba wstawić */}
             </Auxa>
         )

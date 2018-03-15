@@ -8,8 +8,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -20,7 +20,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -42,3 +42,27 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+@font-face {
+  font-family: 'sofiapro-light';
+  src: url('./font/sofiapro-light-webfont.woff2') format('woff2'),
+       url('./font/sofiapro-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  font-family: "sofiapro-light";
+  line-height: 1.23;
+	box-sizing: border-box;
+}
+
+h1 {font-size: 36px;}
+h2 {font-size: 32px;}
+h3 {font-size: 28px;}
+h4 {font-size: 24px;}
+h5 {font-size: 20px;}
+h6 {font-size: 18px;}
+p {font-size: 16px}
+
+a {text-decoration: none; color: #d8b093;;}
+a:focus {outline-color: #d8b093;;}

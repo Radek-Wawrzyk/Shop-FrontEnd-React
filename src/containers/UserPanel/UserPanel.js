@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import Signing from '../../components/Auth/Signing/Signing';
+import Signing from '../Auth/Signing/Signing';
 import Logout from '../../components/Auth/Logout/Logout';
 import Search from '../../components/Search/Search';
 import Auxa from '../../hoc/Auxa/Auxa';
 
-import classes from './Auth.scss';
+import classes from './UserPanel.scss';
 
 class Auth extends Component {
   state = {
@@ -20,10 +20,10 @@ class Auth extends Component {
   render () {
     return (
       <Auxa>
-        <div className={classes.Container}>
+        <div className={classes.UserPanel}>
           <Search />
-          <div onClick={this.changeSignHandler}>
-            {!this.state.isSignin ? <Signing /> : <Logout /> }
+          <div>
+            {this.state.isSignin ? <Signing /> : <Logout /> }
           </div>
         </div>
       </Auxa>

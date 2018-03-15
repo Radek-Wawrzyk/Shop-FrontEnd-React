@@ -1,0 +1,15 @@
+.UserPanel {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 15px 0;
+  div {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .UserPanel {
+    display: none;
+  }
+}
