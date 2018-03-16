@@ -1,11 +1,15 @@
 //libraries
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 
 const navItem = (props) => (
   <li>
-    <a href="#">
+    <NavLink
+      to={props.link}
+      exact={props.exact}
+      activeClassName={props.active}>
       {props.children}
-    </a>
+    </NavLink>
   </li>
 )
 export default navItem;

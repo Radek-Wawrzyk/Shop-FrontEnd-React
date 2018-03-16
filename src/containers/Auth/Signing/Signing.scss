@@ -2,16 +2,13 @@ $mainBtnColor: #383838;
 $secondFontColor: #d8b093;
 
 .Signing {
-  button {
+  display: flex;
+  .SignIn, .SignUp {
     font-size: 14px;
-    border: 1px solid transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: $mainBtnColor;
     padding: 6px 12px;
     color: white;
     margin: 0 5px;
+    min-height: 60px;
     &:focus {
       outline-color: $secondFontColor;
     }
@@ -19,7 +16,12 @@ $secondFontColor: #d8b093;
       cursor: pointer;
     }
   }
+  .SignIn {
+    border: 1px solid transparent;
+    background: black;
+  }
   .SignUp {
+    border: 1px solid transparent;
     background: $secondFontColor;
   }
 }

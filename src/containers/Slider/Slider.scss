@@ -17,6 +17,7 @@ $secondFontColor: #d8b093;
 
 @media screen and (max-width: 920px) {
   .Slider {
+    margin-top: 100px;
     height: 50vh;
   }
 }
@@ -31,6 +32,7 @@ $secondFontColor: #d8b093;
     height: 20px;
     margin: 5px 0;
     position: relative;
+    cursor: pointer;
     &::before {
       content: "◆";
       color: $secondFontColor;

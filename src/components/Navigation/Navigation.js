@@ -10,17 +10,26 @@ const navigation = () => (
   <nav className={classes.Navigation}>
     <Logo />
     <ul className={classes.NavigationMenu}>
-      <NavItem>
+      <NavItem
+        link="/"
+        exact
+        active={classes.Active}>
         Strona główna
       </NavItem>
-      <NavItem>
+      <NavItem
+        link="/oferta"
+        active={classes.Active}>
         Oferta
       </NavItem>
-      <NavItem>
+      <NavItem
+        link="/about"
+        active={classes.Active}>
         O nas
       </NavItem>
-      <NavItem>
-        Kontakt
+      <NavItem
+        link="/contact"
+        active={classes.Active}>
+       Kontakt
       </NavItem>
     </ul>
   </nav>

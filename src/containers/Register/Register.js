@@ -4,9 +4,11 @@ import classes from './Register.scss';
 import Input from '../../components/UI/Input/Input';
 import Logo from '../../assets/images/Rolex_Logo.png';
 
+import Button from '../../components/UI/Button/Button';
+
 class Register extends Component {
     state = {
-        orderForm: {
+        registerForm: {
             username: {
               elementType: 'input',
               elementConfig: {
@@ -15,12 +17,12 @@ class Register extends Component {
               },
               label: 'User Name',
               value: '',
-              errormsg: 'Podałeś niepoprawne dane',
+              errormsg: 'Twoja nazwa użytkownika musi posiadać conajmniej 3 znaki',
               validation: {
-                required: true
+                required: true,
+                minLength: 3,
               },
-              valid: false,
-              touched: false
+              valid: true,
             },
 
             password: {
@@ -31,12 +33,12 @@ class Register extends Component {
               },
               label: 'Password',
               value: '',
-              errormsg: 'Podałeś niepoprawne hasło',
+              errormsg: 'Twoja hasło musi musi posiadać conajmniej 5 znaków',
               validation: {
-                required: true
+                required: true,
+                minLength: 5,
               },
-              valid: false,
-              touched: false
+              valid: true,
             },
 
             firstname: {
@@ -47,11 +49,12 @@ class Register extends Component {
               },
               label: 'First Name',
               value: '',
+              errormsg: 'Twoje imię musi posiadać conajmniej 2 znaki',
               validation: {
-                required: true
+                required: true,
+                minLength: 2,
               },
-                valid: false,
-                touched: false
+                valid: true,
             },
 
             lastname: {
@@ -62,11 +65,12 @@ class Register extends Component {
               },
               label: 'Last Name',
               value: '',
+              errormsg: 'Twoje nazwisko musi posiadać conajmniej 2 znaki',
               validation: {
-                required: true
+                required: true,
+                minLength: 2,
               },
-                valid: false,
-                touched: false
+                valid: true,
             },
 
             email: {
@@ -77,11 +81,12 @@ class Register extends Component {
               },
               label: 'Your E-Mail',
               value: '',
+              errormsg: 'Za krótki adres e-mail',
               validation: {
-                required: true
+                required: true,
+                minLength: 3,
               },
-                valid: false,
-                touched: false
+                valid: true,
             },
 
             city: {
@@ -92,20 +97,46 @@ class Register extends Component {
               },
               label: 'City',
               value: '',
+              errormsg: 'Nazwa miasta musi posiadać conajmniej 2 znaki',
               validation: {
-                required: true
+                required: true,
+                minLength: 2,
               },
-                valid: false,
-                touched: false
+                valid: true,
             },
+
         },
-        formIsValid: false,
-        loading: false
+        formIsValid: true,
+    }
+
+    registerHandler = ( event ) => {
+        event.preventDefault();
+        const formData = {}
+        const updatedRegisterForm = {
+          ...this.state.registerForm
+        }
+        for (let formElementIdentifier in this.state.registerForm) {
+          formData[formElementIdentifier] = this.state.registerForm[formElementIdentifier].value;
+          updatedRegisterForm[formElementIdentifier].valid = this.checkValiditiy(updatedRegisterForm[formElementIdentifier].value, updatedRegisterForm[formElementIdentifier].validation);
+        }
+        let formIsValid = true;
+        for (let inputIdentifier in updatedRegisterForm) {
+          formIsValid = updatedRegisterForm[inputIdentifier].valid && formIsValid;
+        }
+        this.setState({formIsValid: formIsValid});
+
+        // if(this.state.formIsValid) {
+        //   this.setState({formIsValid: false})
+        //   for (let formElementIdentifier in this.state.registerForm) {
+        //   formData[formElementIdentifier] = null;
+        //   this.state.registerForm[formElementIdentifier].value = '';
+        //   }
+        // }
+
     }
 
     checkValiditiy(value, rules) {
       let isValid = true;
-
       if (!rules) {
         return true;
       }
@@ -114,58 +145,57 @@ class Register extends Component {
         isValid = value.trim() !== '' && isValid;
       }
 
+      if(rules.minLength) {
+        isValid = value.length >= rules.minLength && isValid
+      }
+
       return isValid;
     }
 
     inputChangedHandler = (event, inputIdentifier) => {
-      const updatedOrderForm = {
-        ...this.state.orderForm
+      const updatedRegisterForm = {
+        ...this.state.registerForm
       }
       const updatedFormElement = {
-        ...updatedOrderForm[inputIdentifier]
+        ...updatedRegisterForm[inputIdentifier]
       }
       updatedFormElement.value = event.target.value;
-      updatedFormElement.valid = this.checkValiditiy(updatedFormElement.value, updatedFormElement.validation);
-      updatedFormElement.touched = true;
-      updatedOrderForm[inputIdentifier] = updatedFormElement;
+      updatedRegisterForm[inputIdentifier] = updatedFormElement;
 
-      let formIsValid = true;
-      for (let inputIdentifier in updatedOrderForm) {
-        formIsValid = updatedOrderForm[inputIdentifier].valid && formIsValid;
-      }
-
-      this.setState({orderForm: updatedOrderForm, formIsValid: formIsValid});
+      this.setState({registerForm: updatedRegisterForm });;
     }
 
     render () {
       const formElementsArray = [];
-      for (let key in this.state.orderForm) {
+      for (let key in this.state.registerForm) {
         formElementsArray.push({
           id: key,
-          config: this.state.orderForm[key]
+          config: this.state.registerForm[key]
         });
       }
         let form = (
-            <form onSubmit={this.orderHandler}>
-                {formElementsArray.map(formElement => (
+            <form onSubmit={this.registerHandler}>
+                {formElementsArray.map(formElement => {
+                  return (
                   <Input
-                    key= {formElement.id}
+                    key={formElement.id}
                     label= {formElement.config.label}
                     elementType={formElement.config.elementType}
                     elementConfig={formElement.config.elementConfig}
-                    value={formElement.config.value}
                     invalid={formElement.config.valid}
                     shouldValidate={formElement.config.validation}
-                    touched={formElement.config.touched}
+                    value={formElement.config.value}
                     changed={(event) => this.inputChangedHandler(event, formElement.id)}
                     errormsg={formElement.config.errormsg}
                   />
-                ))}
+                )}
+              )}
+                <Button formIsValid={this.state.formIsValid}>Zarejestruj</Button>
             </form>
         );
 
         return (
-            <div className={classes.ContactData}>
+            <div className={classes.Register}>
                 <img src={Logo} alt="Rolex Logo" className={classes.Logo}/>
                 <span className={classes.CloseBtn} onClick={this.props.clicked}>X</span>
                 <h4>Rejestracja</h4>

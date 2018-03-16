@@ -3,9 +3,9 @@ import React, {Component} from 'react';
 
 import NavBtn from './NavBtn/NavBtn';
 import Logo from '../../components/Logo/Logo';
+import Signing from '../../containers/Auth/Signing/Signing';
 
 import classes from './NavMobile.scss'
-    let komp = null
 
 class NavMobile extends Component {
 
@@ -32,33 +32,34 @@ toggleMenu = () => {
            <div className={classes.MobileMenu + ' ' + showMenu}>
              <ul className={classes.MobileMenuList}>
                <li>
-                 <a href="#">
+                 <a href="#id">
                    <span className="fa fa-home" aria-hidden="true"></span>
                    <p>Strona główna</p>
                  </a>
                </li>
                <li>
-                 <a href="#">
+                 <a href="#id">
                    <span className="fa fa-users" aria-hidden="true"></span>
                    <p>Produkty</p>
                  </a>
                </li>
                <li>
-                 <a href="#">
+                 <a href="#id">
                    <span className="fa fa-shopping-bag" aria-hidden="true"></span>
                    <p>o nas</p>
                  </a>
                </li>
                <li>
-                 <a href="#">
+                 <a href="#id">
                    <span className="fa fa-phone" aria-hidden="true"></span>
                    <p>Kontakt</p>
                  </a>
                </li>
              </ul>
              <div className={classes.MobileMenuUserPanel}>
-               <button>Zaloguj</button>
-               <button className={classes.SignUp}>Zarejestruj</button>
+                <Signing />
+               {/* <button>Zaloguj</button>
+               <button className={classes.SignUp}>Zarejestruj</button> */}
              </div>
            </div>
     </nav>

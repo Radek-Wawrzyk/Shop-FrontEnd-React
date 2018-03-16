@@ -1,4 +1,4 @@
-.ContactData {
+.Register {
     background-color: #2C2C2C;
     height: 100vh;
     width: 100vw;
@@ -22,7 +22,6 @@
       justify-content: center;
     div {
       flex-basis: 45%;
-      width: 200px;
       margin: 0 20px;
     }
   }
@@ -42,5 +41,13 @@
     font-size: 50px;
     color: #d8b093;
     cursor: pointer;
+    &:hover {
+      color:red;
+    }
+    &:active {
+      transform: scale(1.2);
+      color:red;
+    }
   }
+
 }

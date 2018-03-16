@@ -31,7 +31,7 @@ class Signing extends Component {
         <Modal show={this.state.openRegister}>
           <Register clicked={() => this.closeModal()}/>
         </Modal>
-        <button>
+        <button className={classes.SignIn}>
           Zaloguj się
         </button>
         <button className={classes.SignUp} onClick={this.openRegister}>
