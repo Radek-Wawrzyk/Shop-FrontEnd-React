@@ -63,9 +63,7 @@ class Slider extends Component {
           {sliderItem}
         </ul>
         <ul className={classes.SliderDots}>
-          <SliderDot id="0" clicked={this.slideHandler} isActive={this.checkClass(0)}/>
-          <SliderDot id="1" clicked={this.slideHandler} isActive={this.checkClass(1)}/>
-          <SliderDot id="2" clicked={this.slideHandler} isActive={this.checkClass(2)}/>
+          {data.map((data, index) => <SliderDot key={data.id} id={data.id} clicked={this.slideHandler} isActive={this.checkClass(index)} /> )}
         </ul>
     </section>
     )

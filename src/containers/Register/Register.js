@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
 
 import classes from './Register.scss';
 import Input from '../../components/UI/Input/Input';
 import Logo from '../../assets/images/Rolex_Logo.png';
 
 import Button from '../../components/UI/Button/Button';
+
+const url = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyC9hjhSO0_Od1B6TMyxfOc6q0DmQDp9ewo";
 
 class Register extends Component {
     state = {
@@ -109,8 +113,31 @@ class Register extends Component {
         formIsValid: true,
     }
 
+
+
+register = () => {
+
+  const authData = {
+    email: this.state.registerForm.email.value,
+    password: this.state.registerForm.password.value,
+  };
+
+  axios.post(url, authData)
+    .then(response => {
+      console.log(response);
+    })
+    .catch(err=> {
+      console.log(authData.email);
+      console.log(authData.password);
+      console.log(err.response.data.error);
+    })
+}
+
+
+
     registerHandler = ( event ) => {
         event.preventDefault();
+        this.register()
         const formData = {}
         const updatedRegisterForm = {
           ...this.state.registerForm
@@ -124,14 +151,6 @@ class Register extends Component {
           formIsValid = updatedRegisterForm[inputIdentifier].valid && formIsValid;
         }
         this.setState({formIsValid: formIsValid});
-
-        // if(this.state.formIsValid) {
-        //   this.setState({formIsValid: false})
-        //   for (let formElementIdentifier in this.state.registerForm) {
-        //   formData[formElementIdentifier] = null;
-        //   this.state.registerForm[formElementIdentifier].value = '';
-        //   }
-        // }
 
     }
 

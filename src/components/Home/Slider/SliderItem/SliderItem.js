@@ -15,6 +15,7 @@ return (
       <p className={classes.SliderContentPrice}>{props.price} zł</p>
     </div>
   </div>
+
   <div className={classes.SliderImg}>
     <img src={props.imgUrl} alt="rolex yacht model"/>
     <img src={props.imgUrl} alt="rolex yacht model opacity reflection " />

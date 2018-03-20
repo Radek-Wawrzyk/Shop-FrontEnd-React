@@ -4,6 +4,9 @@ import React, { Component } from 'react';
 import Auxa from '../Auxa/Auxa';
 import Header from '../../containers/Header/Header';
 
+import './Layout.css';
+
+
 class Layout extends Component {
     render () {
         return (

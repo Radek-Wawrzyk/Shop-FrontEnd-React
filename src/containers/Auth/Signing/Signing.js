@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import classes from './Signing.scss';
 
 import Register from '../../Register/Register';
+import Login from '../../Login/Login';
 //components
 import Modal from '../../../components/UI/Modal/Modal'
 
@@ -18,6 +19,12 @@ class Signing extends Component {
      })
   }
 
+  openLogin = () => {
+     this.setState({
+       openLogin: true,
+     })
+  }
+
   closeModal = () => {
      this.setState({
        openRegister: false,
@@ -31,7 +38,10 @@ class Signing extends Component {
         <Modal show={this.state.openRegister}>
           <Register clicked={() => this.closeModal()}/>
         </Modal>
-        <button className={classes.SignIn}>
+        <Modal show={this.state.openLogin}>
+          <Login clicked={() => this.closeModal()}/>
+        </Modal>
+        <button className={classes.SignIn} onClick={this.openLogin}>
           Zaloguj się
         </button>
         <button className={classes.SignUp} onClick={this.openRegister}>

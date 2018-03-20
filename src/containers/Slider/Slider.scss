@@ -18,7 +18,7 @@ $secondFontColor: #d8b093;
 @media screen and (max-width: 920px) {
   .Slider {
     margin-top: 100px;
-    height: 50vh;
+    height: 85vh;
   }
 }
 
@@ -55,7 +55,9 @@ $secondFontColor: #d8b093;
 
 @media screen and (max-width: 920px) {
   .SliderDots {
-    position: static;
+    width: 100%;
+    top: -5%;
+    left: 0;
     margin: 25px 0;
     text-align: center;
      li {

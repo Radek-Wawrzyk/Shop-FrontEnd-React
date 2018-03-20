@@ -100,7 +100,7 @@ $gold: #d8b093;
 
 
 @media screen and (max-width: 1024px) {
-  .slider-item {
+  .SliderItem {
     padding: 0;
   }
 }
@@ -124,9 +124,9 @@ $gold: #d8b093;
         margin: 25px 0 0 0;
       }
     }
-  }
-  .SliderImg {
-    margin: 60px 0 0 0;
+    .SliderImg {
+      margin: 60px 0 0 0;
+    }
   }
 }
 
@@ -141,6 +141,6 @@ $gold: #d8b093;
     }
   }
   .SliderImg {
-    width: 90%;
+    width: 100%;
   }
 }
