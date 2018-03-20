@@ -1,7 +1,26 @@
-.Success {
-    background-color: #5C9210;
+$mainBtnColor: #383838;
+$secondFontColor: #d8b093;
+
+.Button {
+  font-size: 14px;
+  // border: 1px solid;
+  background: $secondFontColor;
+  padding: 6px 12px;
+  color: $mainBtnColor;
+  margin: 0 5px;
+  min-height: 60px;
+  &:focus {
+    outline-color: $secondFontColor;
+  }
+  &:hover {
+    cursor: pointer;
+  }
 }
 
-.Danger {
+.FormErr {
+  background-color: grey;
+  border: 2px solid red;
+  &:active {
     background-color: red;
+  }
 }

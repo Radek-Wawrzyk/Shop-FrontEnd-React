@@ -4,19 +4,22 @@ import React, {Component} from 'react';
 import classes from './Header.scss';
 //containers
 import Auxa from '../../hoc/Auxa/Auxa';
-import Auth from '../Auth/Auth';
+import UserPanel from '../UserPanel/UserPanel';
 //components
-import Logo from '../../components/Logo/Logo';
 import Navigation from '../../components/Navigation/Navigation';
+import NavMobile from '../../components/NavMobile/NavMobile';
+
 
 class Header extends Component {
 
   render () {
     return (
-      <Auxa>
-        <Logo />
-        <Auth />
-        <Navigation />
+      <Auxa >
+        <div className={classes.Header}>
+          <UserPanel />
+          <Navigation />
+          <NavMobile />
+        </div>
       </Auxa>
     )
   }
