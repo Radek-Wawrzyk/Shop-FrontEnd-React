@@ -5,9 +5,9 @@ import classes from './Header.scss';
 //containers
 import Auxa from '../../hoc/Auxa/Auxa';
 import UserPanel from '../UserPanel/UserPanel';
+import NavMobile from '../NavMobile/NavMobile';
 //components
 import Navigation from '../../components/Navigation/Navigation';
-import NavMobile from '../../components/NavMobile/NavMobile';
 
 
 class Header extends Component {
@@ -15,11 +15,11 @@ class Header extends Component {
   render () {
     return (
       <Auxa >
-        <div className={classes.Header}>
+        <header className={classes.Header}>
           <UserPanel />
           <Navigation />
           <NavMobile />
-        </div>
+        </header>
       </Auxa>
     )
   }

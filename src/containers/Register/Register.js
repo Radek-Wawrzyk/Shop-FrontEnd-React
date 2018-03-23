@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-
-import classes from './Register.scss';
-import Input from '../../components/UI/Input/Input';
+//images
 import Logo from '../../assets/images/Rolex_Logo.png';
 
+//components
+import Input from '../../components/UI/Input/Input';
 import Button from '../../components/UI/Button/Button';
+
+//classes
+import classes from './Register.scss';
 
 const url = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyC9hjhSO0_Od1B6TMyxfOc6q0DmQDp9ewo";
 
@@ -114,7 +117,6 @@ class Register extends Component {
     }
 
 
-
 register = () => {
 
   const authData = {
@@ -127,13 +129,9 @@ register = () => {
       console.log(response);
     })
     .catch(err=> {
-      console.log(authData.email);
-      console.log(authData.password);
       console.log(err.response.data.error);
     })
 }
-
-
 
     registerHandler = ( event ) => {
         event.preventDefault();

@@ -42,7 +42,7 @@ class Slider extends Component {
 
    changeSlide = () => {
     number ++
-    if (number == 3) {
+    if (number > 2) {
       number = 0
     }
     this.setState({

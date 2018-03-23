@@ -1,16 +1,21 @@
 //libraries
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom'
+
 //containers
 import Auxa from './hoc/Auxa/Auxa';
 import Layout from './hoc/Layout/Layout';
+
 //components
-import Home from './components/Home/Home'
+import Home from './containers/Home/Home'
 import Products from './containers/Products/Products'
 import About from './containers/About/About'
 import Contact from './containers/Contact/Contact'
 
+
 class App extends Component {
+
+
   render() {
     return (
       <Auxa>

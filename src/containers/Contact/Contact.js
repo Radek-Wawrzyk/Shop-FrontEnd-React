@@ -2,12 +2,12 @@
 import React from 'react';
 
 //hoc
-import Auxa from '../../hoc/Auxa/Auxa';
+import Content from '../../hoc/Content/Content';
 
 const contact = (props) => (
-  <Auxa>
+  <Content>
     To jest kontakt
-  </Auxa>
+  </Content>
 )
 
 export default contact;

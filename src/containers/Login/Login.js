@@ -1,13 +1,20 @@
+// libraries
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 import axios from 'axios';
 
-import classes from './Login.scss';
-import Input from '../../components/UI/Input/Input';
+// images
 import Logo from '../../assets/images/Rolex_Logo.png';
+
+// components
 import Button from '../../components/UI/Button/Button';
+import Input from '../../components/UI/Input/Input';
 
+// classes
+import classes from './Login.scss';
 
-const url = "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyC9hjhSO0_Od1B6TMyxfOc6q0DmQDp9ewo";
+//actions
+import * as actions from '../../store/actions/auth';
 
 class Login extends Component {
     state = {
@@ -31,31 +38,13 @@ class Login extends Component {
               label: 'Password',
               value: '',
             },
-          }
-    }
-
-    login = () => {
-
-      const authData = {
-        email: this.state.loginForm.email.value,
-        password: this.state.loginForm.password.value,
-      };
-
-      axios.post(url, authData)
-        .then(response => {
-          console.log(response);
-          console.log(response.data.idToken);
-        })
-        .catch(err=> {
-          console.log(authData.email);
-          console.log(authData.password);
-          console.log(err.response.data.error);
-        })
+          },
+        isLogin: false,
     }
 
     loginHandler = ( event ) => {
         event.preventDefault();
-        this.login()
+        this.props.login(this.state.loginForm.email.value, this.state.loginForm.password.value);
         const formData = {}
         for (let formElementIdentifier in this.state.loginForm) {
           formData[formElementIdentifier] = this.state.loginForm[formElementIdentifier].value;
@@ -100,7 +89,7 @@ class Login extends Component {
                   />
                 )}
               )}
-                <Button formIsValid={this.state.formIsValid}>Zaloguj</Button>
+              <Button>Zaloguj</Button>
             </form>
         );
 
@@ -115,4 +104,16 @@ class Login extends Component {
     }
 }
 
-export default Login;
+const mapStateToProps = (state, props) => {
+  return {
+    isSignIn: state.auth.isSignIn,
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    login: (email, password) => dispatch(actions.login(email, password)),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
