@@ -18,6 +18,10 @@ class Slider extends Component {
     this.startInterval()
   }
 
+  componentWillUnmount() {
+    clearInterval(this.interval)
+  }
+
   startInterval = () => {
     this.interval = setInterval(() => this.changeSlide(), 3000);
   }

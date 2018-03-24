@@ -2,8 +2,6 @@ import axios from 'axios';
 
 import * as actionTypes from './actionTypes';
 
-
-
 export const login = (email, password) => {
 
   return dispatch => {
@@ -20,9 +18,10 @@ export const login = (email, password) => {
       .then(response => {
         localStorage.setItem('token', response.data.idToken);
         localStorage.setItem('userId', response.data.localId)
-        console.log(response);
-        console.log(response.data.idToken);
+        // console.log(response);
+        // console.log(response.data.idToken);
         dispatch(signInSuccess(response.data.idToken, response.data.localId));
+        dispatch(closeModal());
       })
       .catch(err=> {
         console.log(err.response.data.error);
@@ -30,6 +29,17 @@ export const login = (email, password) => {
     }
 };
 
+export const checkAuth = () => {
+  return dispatch => {
+    const token = localStorage.getItem('token');
+    if (token){
+      dispatch(signInSuccess())
+    }
+    else {
+      dispatch(logout())
+    }
+  }
+}
 
 export const signInSuccess = (token, userId) => {
   return {
@@ -37,6 +47,14 @@ export const signInSuccess = (token, userId) => {
     token: token,
     userId: userId,
     isSignIn: true
+  };
+}
+
+export const logout = () => {
+  localStorage.removeItem('token');
+  localStorage.removeItem('userId');
+  return {
+    type: actionTypes.LOGOUT,
   };
 }
 

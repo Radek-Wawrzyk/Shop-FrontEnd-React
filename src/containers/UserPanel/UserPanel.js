@@ -16,22 +16,11 @@ import classes from './UserPanel.scss';
 //actions
 import * as actions from '../../store/actions/auth';
 
-const token = localStorage.getItem('token');
-
 class Auth extends Component {
 
 componentDidMount() {
-  
+  this.props.checkAuth()
 }
-logout = () => {
-  console.log('work');
- localStorage.removeItem('token');
- localStorage.removeItem('userId');
- this.setState({
-   isSignin:false
- })
-}
-
 
   render () {
     return (
@@ -39,7 +28,7 @@ logout = () => {
         <div className={classes.UserPanel}>
           <Search />
           <div>
-            {this.props.isSignin ? <Logout clicked={this.logout}/> : <Signing />}
+            {this.props.isSignin ? <Logout clicked={this.props.logout}/> : <Signing />}
           </div>
         </div>
       </Auxa>
@@ -55,7 +44,8 @@ const mapStateToProps = state => {;
 
 const mapDispatchToProps = dispatch => {
   return {
-    // checkLogin: () => dispatch(actions.checkLogin())
+    logout: () => dispatch(actions.logout()),
+    checkAuth: () => dispatch(actions.checkAuth())
   }
 }
 

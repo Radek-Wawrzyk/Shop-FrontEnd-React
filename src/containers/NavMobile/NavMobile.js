@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import NavBtn from '../../components/Navigation/NavBtn/NavBtn';
 import NavItem from '../../components/Navigation/NavItem/NavItem'
 import Logo from '../../components/Logo/Logo';
+import Button from '../../components/UI/Button/Button';
 
 //containers
 import Signing from '../../containers/Auth/Signing/Signing';
@@ -59,7 +60,9 @@ class NavMobile extends Component {
                </NavItem>
              </ul>
              <div className={classes.MobileMenuUserPanel}>
-                <Signing />
+                {this.props.isSignIn ? <Button clicked={this.props.logout}> 
+                  Wyloguj
+                </Button> : <Signing />}
              </div>
            </div>
     </nav>
@@ -72,12 +75,14 @@ const mapStateToProps = (state, props) => {
   return {
     active: state.auth.active,
     hide: state.auth.hide,
+    isSignIn: state.auth.isSignIn,
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
 		toggleMobile: () => dispatch(actions.toggleMobile()),
+		logout: () => dispatch(actions.logout()),
   }
 }
 

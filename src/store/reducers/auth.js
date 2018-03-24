@@ -12,11 +12,15 @@ const initialState = {
 
  const reducer = (state = initialState, action) => {
     switch (action.type) {
-      // case actionTypes.AUTH_START: return authStart(state, action)
       case actionTypes.SIGNIN:
       return {
         ...state,
         isSignIn: action.isSignIn,
+      }
+      case actionTypes.LOGOUT:
+      return {
+        ...state,
+        isSignIn: false,
       }
       case actionTypes.OPEN_REGISTER:
       return {
