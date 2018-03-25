@@ -1,0 +1,156 @@
+//colors
+$mainBtnColor: #383838;
+$secondFontColor: #d8b093;
+$secondFontColorDarker: #c79069;
+
+
+.NewestProduct {
+  position: relative;
+  height: 1000px;
+  z-index: 25;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -300px;
+    z-index: -1;
+    height: 125%;
+    width: 100%;
+    background: linear-gradient(45deg, #272727 10%,#595959 54%, #5a5a5a 96%);
+    clip-path: polygon(0 100%, 0 0, 100% 50%);
+  }
+}
+.NewestProductItem {
+  display: flex;
+  width: 50%;
+}
+
+//Product img
+
+.NewestProductItemImg {
+  width: 50%;
+  position: relative;
+  img {
+    width: 100%;
+    &:last-of-type {
+      position: absolute;
+      left: 0;
+      bottom: -98%;
+      transform: scaleY(-1);
+      opacity: 0.14;
+    } 
+    
+  }
+}
+
+//Product content 
+
+.NewestProductItemContent {
+  width: 50%;
+  color: white;
+  text-align: right;
+  margin: 50px 0 0 0;
+  z-index: 10;
+}
+.NewestContentTitle {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+  font-size: 26px;
+}
+.NewestContentDescription {
+  position: relative;
+  padding: 0 0 10px 0;
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    width: 140%;
+    background:white;
+  }
+  &::after {
+    content: "●";
+    position: absolute;
+    right: 139%;
+    bottom: -7px;
+  }
+}
+
+.NewestContentPayment {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 50px 0 0 0;
+}
+.NewestContentPrice {
+  color: $secondFontColor;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0 25px 7px 0;
+}
+.NewestBtnBuy {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 40px;
+  transition: background 0.4s, color 0.4s;
+  &:hover, &:focus {
+    background: white;
+    color: $mainBtnColor;
+    outline: none;
+  }
+}
+
+
+//media
+
+@media screen and (max-width: 1320px) {
+  .NewestProductItem {
+    padding: 100px 0 0 0;
+    width: 72%;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .NewestProduct::before {
+    display: none;
+  }
+  .NewestProduct {
+    background: linear-gradient(45deg, #272727 10%,#595959 54%, #5a5a5a 96%);
+    height: auto;
+  }
+  .NewestProductItem {
+    width: 100%;
+    margin: 0;
+    padding: 100px 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .NewestProductItemContent {
+    width: 100%;
+    text-align: center;
+  }
+  .NewestContentPayment {
+    justify-content: center;
+  }
+  .NewestContentDescription::before, .NewestContentDescription::after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .NewestProductItem {
+    padding: 100px 15px;
+  }
+  .NewestProductItemImg {
+    width: 75%;
+  }
+  .NewestContentPrice {
+    font-size: 30px;
+  }
+  .NewestBtnBuy {
+    padding: 10px 20px;
+  }
+}

@@ -9,16 +9,13 @@ $secondFontColor: #d8b093;
   .SliderList {
     position: relative;
     height: 100%;
-    .Hide {
-      opacity: 0;
-    }
   }
 }
 
 @media screen and (max-width: 920px) {
   .Slider {
     margin-top: 100px;
-    height: 85vh;
+    height: auto;
   }
 }
 
@@ -34,6 +31,7 @@ $secondFontColor: #d8b093;
     position: relative;
     cursor: pointer;
     &::before {
+      transition: 1s;
       content: "◆";
       color: $secondFontColor;
       position: absolute;
@@ -48,6 +46,7 @@ $secondFontColor: #d8b093;
     }
   }
   .Active::before {
+
     content: "◆";
     color: black;
   }

@@ -1,0 +1,163 @@
+//colors
+$mainBtnColor: #383838;
+$secondFontColor: #d8b093;
+$secondFontColorDarker: #c79069;
+$thirdFontColor: #6e574f;
+
+.SaleProduct {
+  position: relative;
+  height: 550px;
+  background: $secondFontColor;
+  margin: -50px 0 0 0;
+  z-index: 26;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -626px;
+    width: 100%;
+    height: 227%;
+    clip-path: polygon(100% 0, 100% 100%, 0 50%);
+    background: $secondFontColor;
+  }
+}
+
+.SaleProductWrapper {
+  transform: rotate(-25deg);
+  position: absolute;
+  left: 0;
+  top: -200px;
+  width: 100%;
+}
+
+//Product header
+
+.SaleProductItemHeader {
+  position: relative;
+  padding: 0 100px;
+  text-align: center;
+}
+.SaleProductItemHeaderTitle {
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $mainBtnColor;
+}
+.SaleProductItemHeaderDescription {
+  font-size: 20px;
+}
+
+.SaleProductItem {
+  display: flex;
+  margin: 200px;
+}
+
+//Product content
+
+.SaleProductItemContent {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: right;
+  color: $mainBtnColor;
+  height: 50px;
+}
+.SaleProductItemContentTitle {
+  width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 32px;
+}
+.SaleProductItemContentDescription {
+  width: 100%;
+}
+
+//Product payment 
+
+.SaleProductItemPayment {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  color: $secondFontColor;
+  margin: 60px 0 0 0;
+}
+.SaleProductBtn {
+  background: $thirdFontColor;
+  padding: 10px 40px;
+  transition: background 0.4s, color 0.4s;
+  margin: 0 0 0 50%;
+  color: $secondFontColor;
+  font-size: 30px;
+  font-weight: bold;
+}
+.SaleProductPrice {
+  background: $thirdFontColor;
+  padding: 10px 80px;
+  margin: 20px 0;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+//Product img 
+
+.SaleProductItemImg {
+  width: 30%;
+  margin: 0 100px 0 0;
+  img {
+    width: 100%;
+    height: auto;
+    transform: rotate(25deg);
+  }
+}
+
+//media 
+
+@media screen and (max-width: 920px) {
+  .SaleProduct {
+    height: auto;
+    &::before {
+      display: none;
+    }
+  }
+  .SaleProductWrapper {
+    transform: rotate(0deg);
+    position: static;
+  }
+  .SaleProductItemHeader {
+    padding: 25px;
+  }
+  .SaleProductItemHeaderTitle {
+    font-size: 26px;
+    margin: 0 0 20px 0;
+  }
+  .SaleProductItem {
+    margin: 25px 0;
+    padding: 15px;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .SaleProductItemContent {
+    width: 100%;
+    text-align: center;
+    height: auto;
+  }
+  .SaleProductItemContentTitle, .SaleProductItemContentDescription  {
+    display: none;
+  }
+  .SaleProductItemPayment {
+    margin: 0;
+    justify-content: center;
+  }
+  .SaleProductBtn {
+    margin: 0;
+  }
+  .SaleProductItemImg {
+    width: 75%;
+    margin: 50px 0;
+    img {
+      transform: rotate(0deg);
+    }
+  } 
+}

@@ -1,0 +1,142 @@
+//colors
+$mainBtnColor: #383838;
+$secondFontColor: #d8b093;
+$secondFontColorDarker: #c79069;
+
+
+.PopularProducts {
+    position: relative;
+  }
+  .PopularProductsList {
+    margin: 25px 0;
+    display: flex;
+    padding: 0 50px;
+  }
+  
+  
+  //Single item 
+  
+  .ProductItem {
+    width: 33.3%;
+    a {
+     display: flex;
+     flex-wrap: wrap;
+     border: 2px solid transparent ;
+     transition: border 0.5s;
+     padding: 40px;  
+   }
+   &:hover, &:focus {
+       border: 2px solid $secondFontColor;
+       outline: none;
+   }
+  }
+
+  .ItemContent {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: right;
+    margin: 0 0 20px 0;
+    width: 100%;
+  }
+  .ItemContentTitle {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $mainBtnColor;
+    width: 100%;
+  }
+  .ItemContentTitle span {
+    color: $secondFontColor;
+  }
+  .ItemContentPrice {
+    color: $secondFontColor;
+    font-weight: bold;
+    font-size: 20px;
+    width: 100%;
+  }
+  .ProductItem:nth-child(even) .ItemContent {
+    order: 1;
+    margin: 20px 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  .ProductItem:nth-child(even) .ItemContent .ItemContentTitle {
+    order: 1;
+    width: 100%;
+  }
+  
+  //item img
+  
+  .ItemImg {
+    width: 100%;
+    img {
+     width: 100%;
+     height: auto;
+   }
+  }
+  
+  //Product helper search
+  
+  .ProductSearchHelper {
+    display: flex;
+    justify-content: flex-end;
+    margin: 75px 0;
+  }
+  .ProductSearchHelperBox {
+    border: 1px solid $mainBtnColor;
+    width: 100px;
+    margin: 0 10px 0 0;
+  }
+  .ProductSearchHelperBtn {
+    background: $mainBtnColor;
+    padding: 10px 20px;
+    color: $secondFontColor;
+    font-size: 16px;
+    transition: background 0.5s, color 0.5s;
+    &:hover, &:focus {
+      background: $secondFontColor;
+      color: white;
+      outline: none;
+    }
+  }
+  
+  //Media 
+  
+  @media screen and (max-width: 920px) {
+    .PopularProductsList {
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0;
+    }
+    .ProductItem {
+      width: 50%;
+    }
+    .ItemContent {
+      text-align: center;
+      margin: 0;
+    }
+    .ItemContentTitle {
+      font-size: 20px;
+    }
+    .ItemContentPrice {
+      font-size: 16px;
+    }
+    .ProductSearchHelper {
+      display: none;
+    }
+    .ProductItem:nth-child(even) .ItemContent {
+      order: inherit;
+      margin: 0;
+    }
+    .ProductItem:nth-child(even) .ItemContent .ItemContentTitle {
+      order: inherit;
+    }
+    
+  }
+  
+  @media screen and (max-width: 576px) {
+    .ProductItem {
+      width: 100%;
+    }
+  }

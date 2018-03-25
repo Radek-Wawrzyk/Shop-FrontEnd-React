@@ -23,7 +23,7 @@ class Slider extends Component {
   }
 
   startInterval = () => {
-    this.interval = setInterval(() => this.changeSlide(), 3000);
+    this.interval = setInterval(() => this.changeSlide(), 5000);
   }
 
   slideHandler = (props) => {
@@ -57,10 +57,23 @@ class Slider extends Component {
 
   render() {
 
-    let sliderItem = data.map((data) => <SliderItem imgUrl={data.imgUrl} key = {data.id} product_name = {data.product_name} price ={data.price} description={data.description} style={{opacity: 0}}
-      isActive={this.checkClass(data.id)}
-    />)
+    // let sliderItem = data.map((data) => 
+    //   <SliderItem imgUrl={data.imgUrl} 
+    //               key = {data.id} 
+    //               product_name = {data.product_name} 
+    //               price ={data.price} 
+    //               description={data.description} 
+    //               style={{opacity: 0}}
+    //               isActive={this.checkClass(data.id)}
+    // />)
 
+    let sliderItem =
+    <SliderItem imgUrl={data[this.state.number].imgUrl} 
+                key = {data[this.state.number].id} 
+                product_name = {data[this.state.number].product_name} 
+                price ={data[this.state.number].price} 
+                description={data[this.state.number].description} 
+  />
     return (
       <section className={classes.Slider}>
         <ul className={classes.SliderList} >

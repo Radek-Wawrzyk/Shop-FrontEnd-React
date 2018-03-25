@@ -68,5 +68,6 @@ a {text-decoration: none; color: #d8b093;;}
 a:focus {outline-color: #d8b093;;}
 
 main {
+	overflow: hidden;
 	/* margin-top: 150px; */
 }

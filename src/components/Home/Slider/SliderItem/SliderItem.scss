@@ -9,9 +9,7 @@ $gold: #d8b093;
   justify-content: space-around;
   height: 100%;
   padding: 0 50px;
-  transition: opacity 1s;
-  opacity: 1;
-  position: absolute;
+  animation: changeSlide 5s;
   left: 0;
   top: 0;
   .SliderContent {
@@ -143,4 +141,11 @@ $gold: #d8b093;
   .SliderImg {
     width: 100%;
   }
+}
+
+@keyframes changeSlide {
+  0% {opacity: 0;}
+  50% {opacity: 1;}
+  80% {opacity: 1;}
+  100% {opacity: 0;}
 }
