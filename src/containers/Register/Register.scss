@@ -1,0 +1,54 @@
+.Register {
+    background-color: #2C2C2C;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    box-shadow: 0 2px 3px #ccc;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  h4 {
+    width: 100%;
+    color:  rgba(248, 243, 234, 0.7);
+    font-weight: 900;
+    font-size: 60px;
+    margin-top: 40px;
+  }
+    form {
+      max-width: 920px;
+      display: flex;
+      flex-flow: wrap;
+      justify-content: center;
+    div {
+      flex-basis: 45%;
+      margin: 0 20px;
+    }
+  }
+  .Logo {
+    height: 50px;
+    left: 0;
+    margin: 50px 0 0 50px;
+    position: absolute;
+    top: 0;
+    width: 100px;
+  }
+  .CloseBtn {
+    right: 0;
+    margin: 50px 50px 0 0;
+    position: absolute;
+    top: 0;
+    font-size: 50px;
+    color: #d8b093;
+    cursor: pointer;
+    &:hover {
+      color:red;
+    }
+    &:active {
+      transform: scale(1.2);
+      color:red;
+    }
+  }
+
+}

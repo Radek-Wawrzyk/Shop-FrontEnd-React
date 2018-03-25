@@ -1,12 +1,31 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
+//classes
 import classes from './Search.scss';
-import SearchImg from '../../assets/images/search.png';
 
-const search = () => (
-  <div className={classes.Search}>
-    <img src={SearchImg} alt="search"/>
-  </div>
+// actionTypes
+import * as actions from '../../store/actions/auth';
+
+const search = (props) => (
+  <button className={classes.BtnSearch} onClick={props.authStart}>
+    <span className="fa fa-search" aria-hidden="true"></span>
+  </button>
 )
 
-export default search
+//redux
+
+// state i actions na próbę
+const mapStateToProps = (state, props) => {
+    return {
+
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(search)

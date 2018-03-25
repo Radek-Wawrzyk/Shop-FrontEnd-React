@@ -1,4 +1,60 @@
-.Navigation {
-  background-color: #1fb4c2;
+$mainBtnColor: #383838;
+$secondFontColor: #d8b093;
 
+.Navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .NavigationMenu {
+    display: flex;
+    li {
+        position: relative;
+
+      a {
+        position: relative;
+        color: $mainBtnColor;
+        display: block;
+        font-size: 20px;
+        padding: 10px 16px;
+        font-family: "sofiapro-light";
+        &:hover, &:focus {
+          font-weight: bold;
+        }
+        &::before {
+          content: "◆";
+          position: absolute;
+          font-size: 16px;
+          left: 0px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: $mainBtnColor;
+          opacity: 0;
+          transition: opacity 0.4s;
+        }
+        &:hover::before {
+          opacity: 1;
+        }
+      }
+    }
+    .Active {
+      color: $secondFontColor;
+      &::before {
+        content: "◆";
+        position: absolute;
+        left: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $secondFontColor;
+        opacity: 1;
+        transition: opacity 0.4s;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 920px) {
+  .Navigation {
+    display: none;
+  }
 }

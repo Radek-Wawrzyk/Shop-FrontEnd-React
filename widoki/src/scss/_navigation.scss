@@ -1,0 +1,200 @@
+
+.header {
+  width: 100%;
+  padding: 0 100px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background: white;
+}
+
+//User panel
+
+.user-panel {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 15px 0;
+}
+.user-panel button {
+  margin: 0 5px;
+}
+.user-panel .btn-search {
+  margin: 0 20px;
+}
+
+//navigation 
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navigation-left, .navigation-right {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+//Navigation buttons
+
+.navigation-left .fa-search, .navigation-right .fa-shopping-cart {
+  display: none;
+  padding: 0 15px;
+  margin: 0 15px;
+  font-size: 16px;
+  color: $grey;
+  height: 100%;
+  position: relative;
+  transition: color 0.5s;
+}
+.navigation-left .fa-search:hover, .navigation-right .fa-shopping-cart:hover {
+  color: $greyLight;
+}
+.navigation-left .fa-search, .navigation-right .fa-shopping-cart {
+  border-left: 1px solid rgba(56, 56, 56,0.2);
+  border-right: 1px solid rgba(56, 56, 56,0.2);
+}
+.navigation-right .fa-shopping-cart span {
+  position: absolute;
+  right: 3px;
+  top: 6px;
+  padding: 4px 6px;
+  font-size: 8px;
+  background: $gold;
+  color: white;
+  border-radius: 100%;
+}
+
+//Navigation logo
+
+.navigation-logo {
+  width: 80px;
+  height: 80px;
+}
+.navigation-logo a {
+  display: block;
+}
+.navigation-logo img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+//navigation menu 
+
+.navigation-menu {
+  display: flex;
+}
+.navigation-menu li {
+  position: relative;
+}
+.navigation-menu li::before {
+  content: "◆";
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: $gold;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.navigation-menu li:hover::before {
+  opacity: 1;
+}
+.navigation-menu li a {
+  position: relative;
+  display: block;
+  color: $grey;
+  font-size: 20px;
+  padding: 10px 16px;
+  font-family: "sofiapro-light";  
+}
+.navigation-menu li a:hover, .navigation-menu li a:focus {
+  font-weight: bold;
+}
+
+//navigation button 
+
+.navigation-button {
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  border: none;
+  position: relative;
+  display: none;
+}
+.navigation-button span {
+  width: 22px;
+  height: 2px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background: $grey;
+  transition: background 0.4s;
+}
+.navigation-button span::before, .navigation-button span::after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 2px;
+  background: $grey;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: top 0.5s, left 0.5s, transform 0.5s;
+}
+.navigation-button span::before {
+  top: 8px;
+}
+.navigation-button span::after {
+  top: -8px;
+}
+.navigation-button.active span {
+  background: rgba(0,0,0,0);
+}
+.navigation-button.active span::before {
+  top: 0;
+  left: 0;
+  transform: rotate(45deg);
+}
+.navigation-button.active span::after {
+  top: 0;
+  left: 0;
+  transform: rotate(135deg);
+}
+
+//Media
+
+@media screen and (max-width: 1200px) {
+  .header {
+    padding: 0 40px;
+  }
+}
+@media screen and (max-width: 920px) {
+  .header {
+    padding: 0 30px;
+    height: 60px;
+    border-bottom: 1px solid rgba(56, 56, 56,0.2);
+  }
+  .navigation {
+    height: 100%;
+  }
+  .navigation-logo {
+    width: 40px;
+    height: 40px;
+  }
+  .navigation-left .fa-search, .navigation-right .fa-shopping-cart {
+    display: block;
+  }
+  .user-panel {
+    display: none;
+  }
+  .navigation-menu  {
+    display: none;
+  }
+  .navigation-button {
+    display: block;
+  }
+}
