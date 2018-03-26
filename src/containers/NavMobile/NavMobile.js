@@ -6,6 +6,8 @@ import {connect} from 'react-redux';
 import NavBtn from '../../components/Navigation/NavBtn/NavBtn';
 import NavItem from '../../components/Navigation/NavItem/NavItem'
 import Logo from '../../components/Logo/Logo';
+import Search from '../../components/Search/Search';
+import CartButton from '../../components/CartButton/CartButton';
 import Button from '../../components/UI/Button/Button';
 
 //containers
@@ -26,46 +28,54 @@ class NavMobile extends Component {
 
     return (
       <nav className={classes.NavMobile}>
-      <Logo />
-      <NavBtn active={this.props.active} clicked={this.props.toggleMobile}/>
-           <div className={classes.MobileMenu + ' ' + showMenu}>
-             <ul className={classes.MobileMenuList}>
-               <NavItem
-                 link="/"
-                 clicked={this.props.toggleMobile}
-                 exact>
-                   <span className="fa fa-home" aria-hidden="true"></span>
-                   <p>Strona główna</p>
-               </NavItem>
-               <NavItem
-                 link="/oferta"
-                 clicked={this.props.toggleMobile}
-                 exact>
-                   <span className="fa fa-users" aria-hidden="true"></span>
-                   <p>Produkty</p>
-               </NavItem>
-               <NavItem
-                 link="/about"
-                 clicked={this.props.toggleMobile}
-                 exact>
-                   <span className="fa fa-shopping-bag" aria-hidden="true"></span>
-                   <p>o nas</p>
-               </NavItem>
-               <NavItem
-                 link="/contact"
-                 clicked={this.props.toggleMobile}
-                 exact>
-                   <span className="fa fa-phone" aria-hidden="true"></span>
-                   <p>Kontakt</p>
-               </NavItem>
-             </ul>
-             <div className={classes.MobileMenuUserPanel}>
-                {this.props.isSignIn ? <Button clicked={this.props.logout}> 
-                  Wyloguj
-                </Button> : <Signing />}
-             </div>
-           </div>
-    </nav>
+        <div className={classes.NavLeft}>
+          <Logo />
+          <Search />
+        </div>
+          <div className={classes.NavRight}> 
+          {this.props.isSignIn ?
+          <CartButton />
+          : null}
+            <NavBtn active={this.props.active} clicked={this.props.toggleMobile}/>
+            <div className={classes.MobileMenu + ' ' + showMenu}>
+              <ul className={classes.MobileMenuList}>
+                <NavItem
+                  link="/home"
+                  clicked={this.props.toggleMobile}
+                  exact>
+                    <span className="fa fa-home" aria-hidden="true"></span>
+                    <p>Strona główna</p>
+                </NavItem>
+                <NavItem
+                  link="/oferta"
+                  clicked={this.props.toggleMobile}
+                  exact>
+                    <span className="fa fa-users" aria-hidden="true"></span>
+                    <p>Produkty</p>
+                </NavItem>
+                <NavItem
+                  link="/about"
+                  clicked={this.props.toggleMobile}
+                  exact>
+                    <span className="fa fa-shopping-bag" aria-hidden="true"></span>
+                    <p>o nas</p>
+                </NavItem>
+                <NavItem
+                  link="/contact"
+                  clicked={this.props.toggleMobile}
+                  exact>
+                    <span className="fa fa-phone" aria-hidden="true"></span>
+                    <p>Kontakt</p>
+                </NavItem>
+              </ul>
+              <div className={classes.MobileMenuUserPanel}>
+                  {this.props.isSignIn ? <Button clicked={this.props.logout}> 
+                    Wyloguj
+                  </Button> : <Signing />}
+              </div>
+            </div>
+        </div>
+      </nav>
     )
   }
 }

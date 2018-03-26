@@ -6,8 +6,34 @@ $secondFontColor: #d8b093;
 .NavMobile {
   display: none;
   justify-content: space-between;
-  margin-top: 15px;
+  height: 100%;
 }
+
+.NavLeft {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  button  {
+    border-left: 1px solid rgba(56, 56, 56,0.2);
+    border-right: 1px solid rgba(56, 56, 56,0.2);
+    display: block;
+    margin: 0 15px;
+    font-size: 16px;
+    background: white;
+    height: 100%;
+    transition: color 0.5s;
+    span {
+      color: $mainBtnColor;
+    }
+  }
+}
+
+.NavRight {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  }
+
 .MobileMenu  {
   top: 60px;
   position: fixed;

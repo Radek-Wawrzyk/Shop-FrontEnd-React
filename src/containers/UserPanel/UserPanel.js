@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 //components
 import Logout from '../../components/Auth/Logout/Logout';
 import Search from '../../components/Search/Search';
+import CartButton from '../../components/CartButton/CartButton';
 
 //containers
 import Signing from '../Auth/Signing/Signing';
@@ -27,8 +28,11 @@ componentDidMount() {
       <Auxa>
         <div className={classes.UserPanel}>
           <Search />
+          {this.props.isSignIn ?
+          <CartButton />
+          : null}
           <div>
-            {this.props.isSignin ? <Logout clicked={this.props.logout}/> : <Signing />}
+            {this.props.isSignIn ? <Logout clicked={this.props.logout}/> : <Signing />}
           </div>
         </div>
       </Auxa>
@@ -38,7 +42,7 @@ componentDidMount() {
 
 const mapStateToProps = state => {;
   return {
-    isSignin: state.auth.isSignIn,
+    isSignIn: state.auth.isSignIn,
   }
 }
 
