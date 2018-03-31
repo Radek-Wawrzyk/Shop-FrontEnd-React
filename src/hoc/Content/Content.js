@@ -10,7 +10,7 @@ class Content extends Component {
     render () {
         return (
             <Auxa>
-              <div className={classes.Content}>
+              <div className={classes.Content + ' ' + this.props.className}>
                 {this.props.children}
               </div>
             </Auxa>

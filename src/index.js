@@ -14,12 +14,14 @@ import './index.css';
 
 //reducers
 import auth from './store/reducers/auth';
+import search from './store/reducers/search';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 
 const rootReducer = combineReducers({
   auth: auth,
+  search: search,
 })
 
 

@@ -8,7 +8,8 @@ const navItem = (props) => (
       to={props.link}
       exact={props.exact}
       onClick={props.clicked}
-      activeClassName={props.active}>
+      activeClassName={props.active}
+      >
       {props.children}
     </NavLink>
   </li>

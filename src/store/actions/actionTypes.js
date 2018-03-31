@@ -15,3 +15,6 @@ export const TOGGLE_MOBILE = "TOGGLE_MOBILE";
 export const OPEN_REGISTER = "OPEN_REGISTER";
 export const OPEN_LOGIN = "OPEN_LOGIN";
 export const CLOSE_MODAL = "CLOSE_MODAL";
+
+// Search Open
+export const OPEN_SEARCH = "OPEN_SEARCH";

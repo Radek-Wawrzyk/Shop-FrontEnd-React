@@ -40,7 +40,7 @@ class NavMobile extends Component {
             <div className={classes.MobileMenu + ' ' + showMenu}>
               <ul className={classes.MobileMenuList}>
                 <NavItem
-                  link="/home"
+                  link="/"
                   clicked={this.props.toggleMobile}
                   exact>
                     <span className="fa fa-home" aria-hidden="true"></span>

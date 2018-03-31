@@ -1,7 +1,7 @@
 //libraries
 import React from 'react';
 
-import Slider from "../Slider/Slider";
+import Slider from "./Slider/Slider";
 import RecommendedProduct from "../../components/Home/RecommendedProduct/RecommendedProduct";
 import PopularProduct from "../../components/Home/PopularProduct/PopularProduct";
 import CompanyDescription from "../../components/Home/CompanyDescription/CompanyDescription";
