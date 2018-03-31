@@ -5,26 +5,26 @@ import {connect} from 'react-redux';
 import classes from './Search.scss';
 
 // actionTypes
-import * as actions from '../../store/actions/auth';
+import * as actions from '../../store/actions/search';
 
 const search = (props) => (
-  <button className={classes.BtnSearch} onClick={props.authStart}>
+  <button className={classes.BtnSearch} onClick={props.toggleSearch}>
     <span className="fa fa-search" aria-hidden="true"></span>
   </button>
 )
 
 //redux
 
-// state i actions na próbę
 const mapStateToProps = (state, props) => {
-    return {
-
-    }
+  console.log(state)
+  return {
+    searchIsOpen: state.search.searchIsOpen,
+  }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-
+		toggleSearch: () => dispatch(actions.toggleSearch()),
   }
 }
 

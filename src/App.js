@@ -2,19 +2,20 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom'
 
-//containers
+//hoc
 import Auxa from './hoc/Auxa/Auxa';
 import Layout from './hoc/Layout/Layout';
 
-//components
+//containers
 import Home from './containers/Home/Home'
-import Products from './containers/Products/Products'
 import About from './containers/About/About'
 import Contact from './containers/Contact/Contact'
+import CartList from './containers/CartList/CartList'
+
+import ProductList from './components/Product/ProductList/ProductList';
 
 
 class App extends Component {
-
 
   render() {
     return (
@@ -22,7 +23,8 @@ class App extends Component {
         <Layout>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/oferta" component={Products} />
+            <Route path="/oferta" component={ProductList} />
+            <Route path="/cart" component={CartList} />
             <Route path="/about" component={About} />
             <Route path="/kontakt" component={Contact} />
           </Switch>

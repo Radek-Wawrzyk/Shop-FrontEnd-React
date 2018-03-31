@@ -10,7 +10,7 @@ const initialState = {
 }
 
 
- const reducer = (state = initialState, action) => {
+ const auth = (state = initialState, action) => {
     switch (action.type) {
       case actionTypes.SIGNIN:
       return {
@@ -49,4 +49,4 @@ const initialState = {
     }
 }
 
-export default reducer
+export default auth

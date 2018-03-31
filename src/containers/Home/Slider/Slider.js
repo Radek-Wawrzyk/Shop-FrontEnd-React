@@ -4,8 +4,8 @@ import classes from "./Slider.scss";
 
 import data from './data';
 
-import SliderItem from "../../components/Home/Slider/SliderItem/SliderItem";
-import SliderDot from "../../components/Home/Slider/SliderDot/SliderDot";
+import SliderItem from "../../../components/Home/Slider/SliderItem/SliderItem";
+import SliderDot from "../../../components/Home/Slider/SliderDot/SliderDot";
 
 let number = null;
 

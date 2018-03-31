@@ -71,3 +71,7 @@ main {
 	overflow: hidden;
 	/* margin-top: 150px; */
 }
+
+button {
+	cursor: pointer;
+}

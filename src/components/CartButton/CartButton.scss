@@ -1,0 +1,35 @@
+// colors
+$mainBtnColor: #383838;
+$secondFontColor: #d8b093;
+
+.CartBtn  {
+    border: none;
+    border-left: 1px solid rgba(56, 56, 56,0.2);
+    border-right: 1px solid rgba(56, 56, 56,0.2);
+    display: block;
+    padding: 0 15px;
+    margin: 0 30px;
+    font-size: 16px;
+    background: white;
+    height: 100%;
+    transition: color 0.5s;
+    position: relative;
+    span {
+            position: absolute;
+            right: 3px;
+            top: 6px;
+            padding: 4px 6px;
+            font-size: 8px;
+            background:$secondFontColor;
+            color: white;
+            border-radius: 100%;
+    }
+}
+
+@media screen and (min-width: 920px) {
+   .CartBtn { 
+        height: 60px;
+        width: 60px;
+        margin-left: 0;
+    }
+  }
