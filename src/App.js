@@ -24,12 +24,12 @@ class App extends Component {
       <Auxa>
         <Layout>
           <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path={'/products/:id'} component={FullProduct} />
-            <Route path="/products" component={ProductList} />
-            <Route path="/cart" component={CartList} />
-            <Route path="/about" component={About} />
-            <Route path="/kontakt" component={Contact} />
+            <Route path={`${process.env.PUBLIC_URL}/`} exact component={Home} />
+            <Route path={`${process.env.PUBLIC_URL}/products/:id`}  component={FullProduct} />
+            <Route path={`${process.env.PUBLIC_URL}/products`}  component={ProductList} />
+            <Route path={`${process.env.PUBLIC_URL}/cart`}  component={CartList} />
+            <Route path={`${process.env.PUBLIC_URL}/about`}  component={About} />
+            <Route path={`${process.env.PUBLIC_URL}/kontakt`}  component={Contact} />
           </Switch>
         </Layout>
       </Auxa>
