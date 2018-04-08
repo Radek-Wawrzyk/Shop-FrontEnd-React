@@ -7,12 +7,14 @@ import Watch from '../../../assets/images/watch-1.png';
 //classes
 import classes from './PopularProduct.scss';
 
+//components
+import Button from '../../UI/Button/Button';
 
 const PopularProduct = (props) => (
 <section className={classes.PopularProducts}>
         <ul className={classes.PopularProductsList}>
           <li className={classes.ProductItem}>
-            <a href>
+            <a href="true">
               <div className={classes.ItemContent}>
                 <h3 className={classes.ItemContentTitle}>Rolex <span>kaszana</span></h3>
                 <p className={classes.ItemContentPrice}>20 000 zł</p>
@@ -23,7 +25,7 @@ const PopularProduct = (props) => (
             </a>
           </li>
           <li className={classes.ProductItem}>
-           <a href>
+           <a href="true">
               <div className={classes.ItemContent}>
                 <h3 className={classes.ItemContentTitle}>Rolex <span>kaszana</span></h3>
                 <p className={classes.ItemContentPrice}>20 000 zł</p>
@@ -34,7 +36,7 @@ const PopularProduct = (props) => (
             </a>
           </li>
           <li className={classes.ProductItem}>
-            <a href>
+            <a href="true">
               <div className={classes.ItemContent}>
                 <h3 className={classes.ItemContentTitle}>Rolex <span>kaszana</span></h3>
                 <p className={classes.ItemContentPrice}>20 000 zł</p>
@@ -47,7 +49,7 @@ const PopularProduct = (props) => (
         </ul>
         <div className={classes.ProductSearchHelper}>
           {/* <div className={classes.ProductSearchHelperBox}/> */}
-          <button className={classes.ProductSearchHelperBtn}>Wyszukaj podobny produkt</button>
+          <Button className={classes.ProductSearchHelperBtn}>Wyszukaj podobny produkt</Button>
         </div>
       </section>
 )

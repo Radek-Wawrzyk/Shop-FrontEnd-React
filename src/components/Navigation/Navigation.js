@@ -17,7 +17,7 @@ const navigation = () => (
         Strona główna
       </NavItem>
       <NavItem
-        link="/oferta"
+        link="/products"
         active={classes.Active}>
         Oferta
       </NavItem>

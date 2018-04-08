@@ -1,7 +1,6 @@
 // libraries
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import axios from 'axios';
 
 // images
 import Logo from '../../assets/images/Rolex_Logo.png';

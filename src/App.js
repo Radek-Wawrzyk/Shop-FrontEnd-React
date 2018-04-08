@@ -12,7 +12,9 @@ import About from './containers/About/About'
 import Contact from './containers/Contact/Contact'
 import CartList from './containers/CartList/CartList'
 
+//components
 import ProductList from './components/Product/ProductList/ProductList';
+import FullProduct from './components/Product/FullProduct';
 
 
 class App extends Component {
@@ -23,7 +25,8 @@ class App extends Component {
         <Layout>
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/oferta" component={ProductList} />
+            <Route path={'/products/:id'} component={FullProduct} />
+            <Route path="/products" component={ProductList} />
             <Route path="/cart" component={CartList} />
             <Route path="/about" component={About} />
             <Route path="/kontakt" component={Contact} />

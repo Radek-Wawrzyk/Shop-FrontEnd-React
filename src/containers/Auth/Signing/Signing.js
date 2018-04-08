@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 
 //components
 import Modal from '../../../components/UI/Modal/Modal'
+import Button from '../../../components/UI/Button/Button'
 
 //containers
 import Register from '../../Register/Register';
@@ -27,12 +28,12 @@ class Signing extends Component {
         <Modal show={this.props.loginIsOpen}>
           <Login clicked={this.props.closeModal} loginClick={this.props.loginClick}/>
         </Modal>
-        <button className={classes.SignIn} onClick={this.props.openLogin}>
+        <Button className={classes.SignIn} clicked={this.props.openLogin}>
           Zaloguj się
-        </button>
-        <button className={classes.SignUp} onClick={this.props.openRegister}>
+        </Button>
+        <Button className={classes.SignUp} clicked={this.props.openRegister}>
           Zarejestruj
-        </button>
+        </Button>
       </div>
     )
   }

@@ -4,6 +4,9 @@ import React from 'react';
 //classes
 import classes from './NewestProduct.scss'; 
 
+//components
+import Button from '../../UI/Button/Button';
+
 //images
 import watch from '../../../assets/images/watch-3.png'
 
@@ -20,7 +23,7 @@ const newestProduct = () => {
             <p className={classes.NewestContentDescription}>Zegarek z najwyższej jakości materiałów</p>
             <div className={classes.NewestContentPayment}>
               <p className={classes.NewestContentPrice}>10.000 zł</p>
-              <button className={classes.NewestBtnBuy}>Kup teraz</button>
+              <Button className={classes.NewestBtnBuy}>Kup teraz</Button>
             </div>
           </div>
         </div>

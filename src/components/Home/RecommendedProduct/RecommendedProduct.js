@@ -4,6 +4,9 @@ import React from 'react';
 //classes
 import classes from './RecommendedProduct.scss';
 
+//components
+import Button from '../../UI/Button/Button';
+
 const RecommendedProduct = (props) => (
   <section className={classes.RecommendedProduct}>
       <div className={classes.Product}>
@@ -16,7 +19,7 @@ const RecommendedProduct = (props) => (
           <p className={classes.ProductContentDescription}>Zegarek z najwyższej jakości materiałów</p>
           <div className={classes.ProductContentPayment}>
             <p className={classes.ProductContentPrice}>10.000 zł</p>
-            <button className={classes.ProductBtnBuy}>Kup teraz</button>
+            <Button className={classes.ProductBtnBuy}>Kup teraz</Button>
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+//libraries
 import React from 'react';
 
 //classes
@@ -9,16 +10,16 @@ import Content from '../../../hoc/Content/Content';
 // data
 import data from './data';
 
-const productList = (props) => (
-
+const productList = ({match}) => {
+    return (
     <Content className={classes.ProductList}> 
         {data.map((data, index) => {
             return (
-                <Product key={index} {...data}/>
+                 <Product key={index} {...data} match={match}/>
             )
         })}
     </Content>
 
-)
+)}
 
 export default productList

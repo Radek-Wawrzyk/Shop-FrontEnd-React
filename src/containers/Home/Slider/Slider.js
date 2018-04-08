@@ -57,16 +57,6 @@ class Slider extends Component {
 
   render() {
 
-    // let sliderItem = data.map((data) => 
-    //   <SliderItem imgUrl={data.imgUrl} 
-    //               key = {data.id} 
-    //               product_name = {data.product_name} 
-    //               price ={data.price} 
-    //               description={data.description} 
-    //               style={{opacity: 0}}
-    //               isActive={this.checkClass(data.id)}
-    // />)
-
     let sliderItem =
     <SliderItem imgUrl={data[this.state.number].imgUrl} 
                 key = {data[this.state.number].id} 

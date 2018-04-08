@@ -42,8 +42,6 @@ $PriceName: #CF8E67;
 }
 
 .More {
-    // transform: translateX( 50% );
-    // transform: rotate(70deg);
     color: $mainBtnColor;
     left: 25%;
     bottom: 0;
@@ -56,4 +54,5 @@ $PriceName: #CF8E67;
     display: flex;
     justify-content: center;
     transition:all 0.5s;
+    border: 1px solid $mainBtnColor;
 }

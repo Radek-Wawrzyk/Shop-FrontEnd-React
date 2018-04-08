@@ -47,7 +47,7 @@ class NavMobile extends Component {
                     <p>Strona główna</p>
                 </NavItem>
                 <NavItem
-                  link="/oferta"
+                  link="/products"
                   clicked={this.props.toggleMobile}
                   exact>
                     <span className="fa fa-users" aria-hidden="true"></span>
