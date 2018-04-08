@@ -4,17 +4,7 @@ $secondFontColor: #d8b093;
 .Signing {
   display: flex;
   .SignIn, .SignUp {
-    font-size: 14px;
-    padding: 6px 12px;
     color: white;
-    margin: 0 5px;
-    min-height: 60px;
-    &:focus {
-      outline-color: $secondFontColor;
-    }
-    &:hover {
-      cursor: pointer;
-    }
   }
   .SignIn {
     border: 1px solid transparent;
@@ -22,6 +12,5 @@ $secondFontColor: #d8b093;
   }
   .SignUp {
     border: 1px solid transparent;
-    background: $secondFontColor;
   }
 }

@@ -17,10 +17,10 @@ import SearchContainer from '../SearchContainer/SearchContainer';
 
 //actions
 import * as actions from '../../store/actions/search';
+
 class Header extends Component {
 
   render () {
-    console.log(this.props.searchIsOpen)
     return (
       <Auxa >
         <header className={classes.Header}>

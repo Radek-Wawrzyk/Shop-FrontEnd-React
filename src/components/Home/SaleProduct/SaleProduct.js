@@ -7,6 +7,9 @@ import Watch from './../../../assets/images/watch-2.png'
 //classes
 import classes from './SaleProduct.scss';
 
+//components
+import Button from '../../UI/Button/Button'
+
 const saleProduct = () => {
     return (
     <section className={classes.SaleProduct}>
@@ -21,7 +24,7 @@ const saleProduct = () => {
               <p className={classes.SaleProductItemContentDescription}>No elegancki model w pytkę zbysia</p>
               <div className={classes.SaleProductItemPayment}>
                 <p className={classes.SaleProductPrice}>20 000 zł</p>
-                <button className={classes.SaleProductBtn}>Kup teraz!</button>
+                <Button className={classes.SaleProductBtn}>Kup teraz!</Button>
               </div>
             </div>
             <figure className={classes.SaleProductItemImg}>

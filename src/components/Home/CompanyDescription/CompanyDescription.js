@@ -1,9 +1,6 @@
 //libraries
 import React from 'react';
 
-//images
-import Logo from '../../../assets/images/Rolex_Logo.png';
-
 //classes
 import classes from './CompanyDescription.scss'; 
 

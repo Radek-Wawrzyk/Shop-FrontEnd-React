@@ -16,7 +16,6 @@ const search = (props) => (
 //redux
 
 const mapStateToProps = (state, props) => {
-  console.log(state)
   return {
     searchIsOpen: state.search.searchIsOpen,
   }
