@@ -40,28 +40,28 @@ class NavMobile extends Component {
             <div className={classes.MobileMenu + ' ' + showMenu}>
               <ul className={classes.MobileMenuList}>
                 <NavItem
-                  link="/"
+                  link={`${process.env.PUBLIC_URL}/`}
                   clicked={this.props.toggleMobile}
                   exact>
                     <span className="fa fa-home" aria-hidden="true"></span>
                     <p>Strona główna</p>
                 </NavItem>
                 <NavItem
-                  link="/products"
+                  link={`${process.env.PUBLIC_URL}/products`}
                   clicked={this.props.toggleMobile}
                   exact>
                     <span className="fa fa-users" aria-hidden="true"></span>
                     <p>Produkty</p>
                 </NavItem>
                 <NavItem
-                  link="/about"
+                  link={`${process.env.PUBLIC_URL}/about`} 
                   clicked={this.props.toggleMobile}
                   exact>
                     <span className="fa fa-shopping-bag" aria-hidden="true"></span>
                     <p>o nas</p>
                 </NavItem>
                 <NavItem
-                  link="/contact"
+                  link={`${process.env.PUBLIC_URL}/kontakt`}
                   clicked={this.props.toggleMobile}
                   exact>
                     <span className="fa fa-phone" aria-hidden="true"></span>
