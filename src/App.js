@@ -14,7 +14,7 @@ import CartList from './containers/CartList/CartList'
 
 //components
 import ProductList from './components/Product/ProductList/ProductList';
-import FullProduct from './components/Product/FullProduct';
+import FullProduct from './components/Product/FullProduct/FullProduct';
 
 
 class App extends Component {
