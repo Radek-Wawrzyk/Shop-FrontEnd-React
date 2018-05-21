@@ -5,15 +5,17 @@ import {NavLink} from 'react-router-dom';
 // classes
 import classes from './CartButton.scss';
 
+// components
+import Button from './../UI/Button/Button';
 
 
 const cartButton = () => (
     <NavLink
     to={'/cart'}
     exact >
-        <button className={"fa fa-shopping-cart " + classes.CartBtn} aria-hidden="true">
+        <Button className={"fa fa-shopping-cart " + classes.CartBtn} aria-hidden="true">
             <span>5</span>
-        </button>
+        </Button>
     </NavLink>
 );
 
